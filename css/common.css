@@ -1,0 +1,16 @@
+p { color: deepskyblue; }
+
+.highlight { background-color: yellow; }
+
+.err { color: red; }
+
+#header { font-size: 20px; }
+
+div p { font-style: italic; }
+
+ul > li { margin-left: 30px; }
+
+h1 + p { font-weight: bold; }
+
+
+
