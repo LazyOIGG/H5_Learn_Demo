@@ -1,36 +1,71 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Layout Demo</title>
 
     <style>
+        /* 原始样式增强 */
         .body {
             font-size: 14px;
             background-color: black;
+            color: white; /* 增加文字颜色 */
+            padding: 2em;
+            margin: 2em;
+            border-radius: 8px;
+            min-height: 30em; /* 确保高度可见 */
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.3); /* 内部发光效果 */
         }
 
         .container {
             display: flex;
             width: 50em;
-            margin: 0 auto;
+            margin: 2em auto; /* 增加外间距 */
             background-color: lightgray;
             height: 40em;
+            border: 3px dashed #666; /* 容器边框 */
+            position: relative; /* 用于伪元素定位 */
         }
 
+        /* 添加可视化标注 */
+        .container::before {
+            content: "Container Area";
+            position: absolute;
+            top: -1.5em;
+            left: 0;
+            color: #666;
+            font-size: 0.8em;
+            font-family: monospace;
+        }
+
+        .body::before {
+            content: "Body Area";
+            display: block;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9em;
+            margin-bottom: 1em;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 0.5em;
+        }
     </style>
 </head>
 
 <body>
-
 <div class="container">
     <div class="body">
+        <h2>Content Title</h2>
+        <p>This is the main content area with:</p>
+        <ul>
+            <li>Black background</li>
+            <li>White text</li>
+            <li>Internal spacing</li>
+            <li>Subtle shadow effects</li>
+        </ul>
+        <p>← 注意观察左侧的容器边距 →</p>
     </div>
 </div>
-
 </body>
-
 </html>
