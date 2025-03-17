@@ -17,15 +17,24 @@
             display: flex; /弹性布局/
             flex-direction: row; /主轴方向为行/
             flex-wrap: wrap;
-            flex-flow: column wrap;
-            justify-content: space-around; /主轴方向上的对齐方式/
-            align-items: center; /交叉轴上的对齐方式/
+            /*flex-flow: column wrap;*/
+            /*justify-content: space-around; /主轴方向上的对齐方式/*/
+            /*align-items: center; /交叉轴上的对齐方式/*/
             /*align-content: space-around; /容器内换行的对齐方式/*/
 
             width: 50em;
             height: 40em;
             margin: 0 auto;
             background-color: lightgray;
+        }
+
+        .left {
+            background-color: red;
+            flex-grow: 2;
+        }
+        .right {
+            background-color: deepskyblue;
+            flex-grow: 8;
         }
 
     </style>
