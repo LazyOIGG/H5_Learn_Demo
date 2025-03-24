@@ -8,19 +8,23 @@
     <title>Document</title>
 
     <style>
-        .body {
+        html * {
+            box-sizing: border-box;
+        }
+
+        body {
             font-size: 14px;
             background-color: black;
         }
 
         .container {
-            display: flex; /弹性布局/
-            flex-direction: row; /主轴方向为行/
+            display: flex;/* 弹性布局*/
+            flex-direction: row; /*主轴方向为行*/
             flex-wrap: wrap;
             /*flex-flow: column wrap;*/
-            /*justify-content: space-around; /主轴方向上的对齐方式/*/
-            /*align-items: center; /交叉轴上的对齐方式/*/
-            /*align-content: space-around; /容器内换行的对齐方式/*/
+            /*justify-content: space-around; !*主轴方向上的对齐方式*!*/
+            /*align-items: center; !*交叉轴上的对齐方式*!*/
+            /*align-content: space-around; !*容器内换行的对齐方式*!*/
 
             width: 50em;
             height: 40em;
@@ -29,12 +33,17 @@
         }
 
         .left {
-            background-color: red;
-            flex-grow: 2;
+            background-color: #f7f7f7;
+            flex-grow: 3;
         }
         .right {
-            background-color: deepskyblue;
-            flex-grow: 8;
+            background-color: #ffffff;
+            flex-grow: 7;
+        }
+        .triangle{
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-color: #608abf;
         }
 
     </style>
@@ -43,7 +52,10 @@
 <body>
 
 <div class="container">
-    <div class="left">a</div>
+    <div class="left">
+        <div class="triangle">
+        </div>
+    </div>
     <div class="right">b</div>
 </div>
 
