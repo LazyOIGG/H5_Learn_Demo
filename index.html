@@ -15,6 +15,7 @@
         :root {/*从根元素开始就生效*/
             --primary-color: #608abf;
             --secondary-color: #f7f7f7;
+            --text-color: #333;
         }
 
         body {
@@ -64,6 +65,16 @@
             position: relative;
         }
 
+        .name{
+            font-size: 200%;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .title{
+            color: var(--text-color);
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -72,6 +83,8 @@
 <div class="container">
     <div class="left">
         <img class="avatar" src="assets/images/file1.jpg" alt="阿尔玛"/>
+        <div class="name">阿尔玛</div>
+        <div class="title">以公会的名义请你讨伐</div>
     </div>
     <div class="right">b</div>
 </div>
