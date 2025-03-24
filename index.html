@@ -12,6 +12,11 @@
             box-sizing: border-box;
         }
 
+        :root {/*从根元素开始就生效*/
+            --primary-color: #608abf;
+            --secondary-color: #f7f7f7;
+        }
+
         body {
             font-size: 14px;
             background-color: black;
@@ -41,7 +46,7 @@
             display: block;
             width: 100%;
             aspect-ratio: 1/1;
-            background-color: #608abf;
+            background-color: var(--primary-color);
             clip-path: polygon(0 0, 0 100%, 100% 0);
         }
         .right {
