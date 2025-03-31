@@ -12,99 +12,197 @@
             box-sizing: border-box;
         }
 
-        :root {/*从根元素开始就生效*/
-            --primary-color: #608abf;
-            --secondary-color: #f7f7f7;
-            --text-color: #636466;
+        :root{/*从根元素开始就生效*/
+            --color-primary: #6989BB;
+            --color-secondary: #F7F7F7;
+            --color-title: #636466;
+            --color-text: #636466;
         }
 
-        body {
+        body{
+            margin: 0;
+            padding: 0;
             font-size: 14px;
             background-color: black;
         }
 
-        .container {
-            display: flex;/* 弹性布局*/
-            flex-direction: row; /*主轴方向为行*/
-            flex-wrap: wrap;
+        .container{
+            width: 60em;
+            display: flex;
+            align-items: stretch;
+            margin: 0 auto;
+            background: white;
+            border: 0.4em solid white;
             /*flex-flow: column wrap;*/
             /*justify-content: space-around; !*主轴方向上的对齐方式*!*/
             /*align-items: center; !*交叉轴上的对齐方式*!*/
             /*align-content: space-around; !*容器内换行的对齐方式*!*/
 
-            width: 50em;
-            height: 40em;
-            margin: 0 auto;
-            background-color: lightgray;
         }
 
-        .left {
-            background-color: #f7f7f7;
-            flex-grow: 3;
+        .left{
+            flex-basis: 35%;
+            background-color: var(--color-secondary);
         }
-        .left::before {
-            content: "";
-            display: block;
-            width: 100%;
-            aspect-ratio: 1/1;
-            background-color: var(--primary-color);
-            clip-path: polygon(0 0, 0 100%, 100% 0);
-        }
-        .right {
-            background-color: #ffffff;
+        .right{
+            flex-basis: 65%;
             flex-grow: 7;
         }
 
-        .avatar{
-            width: 10em;
-            height: 10em;
-            border-radius: 5em;
-            border: 0.5em solid #fff;
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        header::before{
+            content: '';
             display: block;
-            margin: -16em auto 0;
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-color: var(--color-primary);
+            clip-path: polygon(0 0, 100% 0, 0 100%);
+
+        }
+
+        header .avatar{
+            display: block;
             position: relative;
+            border: 0.4em solid white;
+             border-radius: 50%;
+            width: 12em;
+            height: 12em;
+            object-fit: cover;
+            margin: -17em auto 0;
         }
 
-        .name{
-            font-size: 200%;
-            color: var(--primary-color);
-            text-align: center;
+        header .name{
+            color: var(--color-primary);
+            font-size: 3em;
+            margin-top: 0.5em;
+        }
+        header .title{
+            color: var(--color-title);
+            font-size: 2em;
         }
 
-        .title{
-            color: var(--text-color);
-            text-align: center;
+        .left section{
+            padding: 2em;
         }
 
-        .contact{
-            padding: 1em;
+
+        .icon{
+            display: inline-block;
+            background-color: var(--color-title);
+            mask-size: cover;
+            width: 1em;
+            aspect-ratio: 1/1;
+            margin-right: 0.2em;
+            transform: translateY(3px);
         }
-         .contact:first-child{
-             font-size: 150%;
-         }
+
+        .icon-contact{
+            mask-image: url('./assets/icones/phone.svg');
+        }
+        .icon-call-me{
+            width: 1.5em;
+            mask-image: url('./assets/icones/phone-outline.svg');
+            background-color: var(--color-primary);
+        }
+        .icon-email{
+            width: 1.5em;
+            mask-image: url('./assets/icones/person-pin.svg');
+            background-color: var(--color-primary);
+        }
+        .icon-home{
+            width: 1.5em;
+            mask-image: url('./assets/icones/home.svg');
+            background-color: var(--color-primary);
+        }
+        .contact>div{
+            margin-bottom: 0.5em;
+            color: var(--color-text);
+        }
+        .contact>div:first-child{
+            font-size: 1.5em;
+            font-weight: bold;
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid var(--color-primary);
+            margin-bottom: 0.5em;
+        }
+        .icon-user{
+            /* 自我介绍图标 */
+            mask-image: url('./assets/icones/user.svg');
+        }
+        .about-me>div {
+            color: var(--color-text);
+        }
+        .about-me>div:first-child{
+            font-size: 1.5em;
+            font-weight: bold;
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid var(--color-primary);
+            margin-bottom: 0.5em;
+        }
+
+        .skills>div {
+            color: var(--color-text);
+        }
+        .skills>div:first-child{
+            font-size: 1.5em;
+            color: var(--color-text);
+            font-weight: bold;
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid var(--color-primary);
+            margin-bottom: 0.5em;
+        }
+
+        .icon-skills{
+            mask-image: url('./assets/icones/puzzle.svg');
+        }
+
     </style>
 </head>
-
 <body>
+    <div class="container">
+        <div class="left">
+            <header>
+                <img class="avatar" src="./assets/images/file1.jpg" alt="">
+                <div class="name">
+                    阿尔玛
+                </div>
+                <div class="title">
+                    公会助理
+                </div>
+            </header>
 
-<div class="container">
-    <!--左边栏-->
-    <div class="left">
-        <img class="avatar" src="assets/images/file1.jpg" alt="阿尔玛"/>
-        <div class="name">阿尔玛</div>
-        <div class="title">以公会的名义请你讨伐</div>
-        <!--联系方式-->
-        <div class="contact">
-            <div>联系方式</div>
-            <div>工会热线:10086</div>
-            <div>电子邮箱:nichunyang2005@foxmail.com</div>
-            <div>地址:猎人公会天堑沙原据点</div>
+            <section class="contact">
+                <div><i class="icon icon-contact"></i>联系方式</div>
+                <div><i class="icon icon-call-me"></i>+86 18225889352</div>
+                <div><i class="icon icon-email"></i>nichunyang2005@foxmail.com</div>
+                <div><i class="icon icon-home"></i>天堑沙原</div>
+            </section>
+
+            <section class="about-me">
+                <div><i class="icon icon-user"></i>自我介绍</div>
+                <div>
+                    负责处理怪物狩猎的请求与许可，以及任务管理与承接的编辑者。在原野上也会与猎人同行，提供有助于狩猎的信息，还会在管理任务与补给等方面提供支援。专攻文化人类学，在考古学方面也有造诣。
+                </div>
+            </section>
+
+            <section class="skills">
+                <div><i class="icon icon-skills"></i>技能</div>
+                <div>
+                    在原野上也会与猎人同行，提供有助于狩猎的信息，还会在管理任务与补给等方面提供支援。专攻文化人类学，在考古学方面也有造诣。
+                </div>
+            </section>
+
+        </div>
+        <div class="right">
+
         </div>
     </div>
-    <!--右边栏-->
-    <div class="right">b</div>
-</div>
-
 </body>
 
 </html>
